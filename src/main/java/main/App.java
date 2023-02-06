@@ -8,6 +8,9 @@ import java.util.ArrayList;
  * Veikko Vanninen
  */
 public class App {
+    /**
+     * @param args
+     */
     public static void main( String[] args ) {
         Scanner selection = new Scanner(System.in);
 
@@ -49,12 +52,17 @@ public class App {
                             animal.printSpecs();
                         }
                         break;
-                    // case 3:
-                    //     System.out.println("Kuinka monta kierrosta?");
-                    //     String lapString = selection.nextLine();
-                    //     int lap = Integer.parseInt(lapString);
-                    //     hedgehog.run(lap);
-                    //     break;
+                    case 3:
+                        System.out.println("Kuinka monta kierrosta?");
+                        String lapString = selection.nextLine();
+                        int lap = Integer.parseInt(lapString);
+
+                        for (Animal animal : zooAnimals) {
+                            for (int y = 0; y < lap; y++) {
+                                    animal.runAnimals();
+                            } 
+                        }                 
+                        break;
                     case 0:
                         System.out.println("Kiitos ohjelman käytöstä.");
                         exit = true;
